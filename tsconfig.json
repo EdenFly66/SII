@@ -19,6 +19,9 @@
     "module": "ES2022"
   },
   "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      "checks": { "missingControlFlowDirective": "suppress" }
+    },
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

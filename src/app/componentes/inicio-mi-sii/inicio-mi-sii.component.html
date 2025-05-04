@@ -1,0 +1,45 @@
+<app-cabecera-cierre></app-cabecera-cierre>
+
+<div class="user-info">
+  <p>
+    <strong>Nombre o razón social:</strong> NO INGRESADO<br />
+    <strong>RUT:</strong> NO INGRESADO<br />
+    <strong>Domicilio:</strong> NO INGRESADO<br />
+    <strong>Correo para notificaciones:</strong> NO INGRESADO
+  </p>
+</div>
+
+<div class="container">
+  <app-lateral (seleccionCambio)="actualizarContenido($event)"></app-lateral>
+
+  <main *ngIf="this.contenido=='inicio'">
+    <app-casa-sii></app-casa-sii>
+  </main>
+
+  <main *ngIf="this.contenido=='datos'">
+    <app-datos-personales></app-datos-personales>
+  </main>
+
+  <main  *ngIf="this.contenido=='tramites'">
+    <app-tramites (seleccionCambio)="actualizarContenido($event)"></app-tramites>
+  </main>
+
+  <main *ngIf="this.contenido=='solicitudes'">
+    <app-solicitudes></app-solicitudes>
+  </main>
+
+  <main *ngIf="this.contenido=='expediente'">
+    <app-expendiente-electronico></app-expendiente-electronico>
+  </main>
+
+  <main *ngIf="this.contenido=='informa'">
+    <app-informa></app-informa>
+  </main>
+
+  <main *ngIf="this.contenido=='actividades'">
+    <app-inicio-actividades></app-inicio-actividades>
+  </main>
+
+</div>
+
+<app-pie></app-pie>

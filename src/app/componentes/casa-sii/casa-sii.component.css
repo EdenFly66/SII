@@ -1,0 +1,34 @@
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  width: 150vh;
+}
+.user-info {
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.banner {
+  margin: 20px 0;
+  padding: 20px;
+  background: linear-gradient(to right, #cde5f6, #eaf3f9);
+  border: 1px solid #99c;
+}
+.banner h2 {
+  margin-top: 0;
+  color: #003366;
+}
+.summary-table {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-top: 2px solid #003366;
+}
+.summary-item {
+  text-align: start;
+}
+.summary-item h3 {
+  color: #003366;
+}

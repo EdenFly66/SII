@@ -1,0 +1,19 @@
+<aside class="sidebar">
+  <button *ngIf="this.seleccionado=='inicio'" (click)="dirigir('inicio')" class="active">Inicio</button>
+  <button *ngIf="this.seleccionado!='inicio'" (click)="dirigir('inicio')">Inicio</button>
+
+  <button *ngIf="this.seleccionado=='datos'" (click)="dirigir('datos')" class="active">Datos personales y tributarios</button>
+  <button *ngIf="this.seleccionado!='datos'" (click)="dirigir('datos')">Datos personales y tributarios</button>
+
+  <button *ngIf="this.seleccionado=='tramites'" (click)="dirigir('tramites')" class="active">Trámites en línea</button>
+  <button *ngIf="this.seleccionado!='tramites'" (click)="dirigir('tramites')">Trámites en línea</button>
+
+  <button *ngIf="this.seleccionado=='solicitudes'" (click)="dirigir('solicitudes')" class="active">Mis Solicitudes</button>
+  <button *ngIf="this.seleccionado!='solicitudes'" (click)="dirigir('solicitudes')">Mis Solicitudes</button>
+
+  <button *ngIf="this.seleccionado=='expediente'" (click)="dirigir('expediente')" class="active">Expediente Electrónico</button>
+  <button *ngIf="this.seleccionado!='expediente'" (click)="dirigir('expediente')">Expediente Electrónico</button>
+
+  <button *ngIf="this.seleccionado=='informa'" (click)="dirigir('informa')" class="active">SII te informa</button>
+  <button *ngIf="this.seleccionado!='informa'" (click)="dirigir('informa')">SII te informa</button>
+</aside>

@@ -1,0 +1,20 @@
+.sidebar {
+  width: 220px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar button {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border: none;
+  background-color: #eee;
+  cursor: pointer;
+  text-align: left;
+  font-weight: bold;
+}
+.sidebar button.active {
+  background-color: #0066cc;
+  color: white;
+}

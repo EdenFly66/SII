@@ -1,0 +1,244 @@
+<!-- formulario-empresa.component.html -->
+<div class="form-container">
+  <h2>Formulario de Empresa</h2>
+
+  <!-- Pestañas superiores -->
+  <div class="tab-header">
+    <div
+      class="tab"
+      [class.active]="pestanaActiva === 'razon'"
+      (click)="seleccionar('razon')"
+    >
+      Razón Social
+    </div>
+    <div
+      class="tab"
+      [class.active]="pestanaActiva === 'constitucion'"
+      (click)="seleccionar('constitucion')"
+    >
+      Constitución
+    </div>
+    <div *ngIf="datos.constitucion.categoria=='Primera Categoría'"
+      class="tab"
+      [class.active]="pestanaActiva === 'capital'"
+      (click)="seleccionar('capital')"
+    >
+      Capital Social
+    </div>
+    <div
+      class="tab"
+      [class.active]="pestanaActiva === 'domicilio'"
+      (click)="seleccionar('domicilio')"
+    >
+      Domicilio
+    </div>
+  </div>
+
+  <!-- Contenido dinámico por pestaña -->
+  <div class="tab-content">
+    <!-- Razón Social -->
+    <div *ngIf="pestanaActiva === 'razon'">
+      <h1>Persona que efectúa el trámite</h1>
+      <label>RUT:</label>
+      <input class="input-field" [(ngModel)]="datos.razon.rut" />
+      <label>Apellido Paterno</label>
+      <input class="input-field" [(ngModel)]="datos.razon.apellidoP1" />
+      <label>Apellido Materno</label>
+      <input class="input-field" [(ngModel)]="datos.razon.apellidoM1" />
+      <label>Nombres</label>
+      <input class="input-field" [(ngModel)]="datos.razon.nombres1" />
+      <hr />
+      <h1>Identificación del contribuyente</h1>
+      <label>Clasificación de Contribuyente: </label>
+      <input list="opciones8" [(ngModel)]="datos.razon.clasificacion" />
+      <datalist id="opciones8">
+        <option value="AAAAA">AAAAA</option>
+        <option value="BBBBB">BBBBB</option>
+      </datalist>
+      <br />
+      <br />
+      <label>Apellido Paterno</label>
+      <input class="input-field" [(ngModel)]="datos.razon.apellidoP2" />
+      <label>Apellido Materno</label>
+      <input class="input-field" [(ngModel)]="datos.razon.apellidoM2" />
+      <label>Nombres</label>
+      <input class="input-field" [(ngModel)]="datos.razon.nombres2" />
+    </div>
+    <!-- Constitución -->
+    <div *ngIf="pestanaActiva === 'constitucion'">
+      <h1>Identificación de Actividades Económicas a Desarrollar</h1>
+      <label>Categoría: </label>
+      <input list="opciones0" [(ngModel)]="datos.constitucion.categoria" />
+      <datalist id="opciones0">
+        <option value="Primera Categoría">Primera Categoría</option>
+        <option value="Segunda Categoría">Segunda Categoría</option>
+      </datalist>
+      <br />
+      <br />
+      <div *ngIf="this.datos.constitucion.categoria=='Primera Categoría'">
+        <label>Afecta a IVA:</label>
+      <input class="input-field" [(ngModel)]="datos.constitucion.iva" />
+      <label>Exento:</label>
+      <input class="input-field" [(ngModel)]="datos.constitucion.exento" />
+      </div>
+      
+      <label>Descripción de la Actividad:</label>
+      <input class="input-field" [(ngModel)]="datos.constitucion.descripcion" />
+      <hr>
+      <h2>Códigos de Actividad</h2>
+      <div class="codigos">
+        <label>Principal: </label>
+        <input list="opciones1" [(ngModel)]="datos.constitucion.codigoP" />
+        <datalist id="opciones1">
+          <option value="Primera Categoría">Primera Categoría</option>
+        </datalist>
+        <label>Secundario: </label>
+        <input list="opciones2" [(ngModel)]="datos.constitucion.codigoS1" />
+        <datalist id="opciones2">
+          <option value="Primera Categoría">Primera Categoría</option>
+          <option value="Segunda Categoría">Segunda Categoría</option>
+        </datalist>
+        <label>Secundario: </label>
+        <input list="opciones3" [(ngModel)]="datos.constitucion.codigoS2" />
+        <datalist id="opciones3">
+          <option value="Primera Categoría">Primera Categoría</option>
+          <option value="Segunda Categoría">Segunda Categoría</option>
+        </datalist>
+        <label>Secundario: </label>
+        <input list="opciones4" [(ngModel)]="datos.constitucion.codigoS3" />
+        <datalist id="opciones4">
+          <option value="Primera Categoría">Primera Categoría</option>
+          <option value="Segunda Categoría">Segunda Categoría</option>
+        </datalist>
+        <br>
+        <br>
+        
+        <div *ngIf="datos.constitucion.categoria=='Primera Categoría'">
+          <hr>
+          <h1>Sólo para Contribuyentes Afectos a Impuestos de Primera Categoría</h1>
+          <label>Selección de Régimen Tributario de la Renta </label>
+          <input list="opciones7" [(ngModel)]="datos.constitucion.regimenTributario" />
+          <datalist id="opciones7">
+            <option value="Tributación Simplificada 14 TER">Tributación Simplificada 14 TER</option>
+            <option value="Renta Presunta">Renta Presunta</option>
+            <option value="Renta Atribuida (ART.14A)">Renta Atribuida (ART.14A)</option>
+            <option value="Semi Integrada (ART 14.B)">Semi Integrada (ART 14.B)</option>
+          </datalist>
+          <br>
+          <br>
+          <label>Rol Avalúo Propiedad</label>
+          <input class="input-field" [(ngModel)]="datos.constitucion.rap" />
+          <label>Rut Propietario:</label>
+          <input class="input-field" [(ngModel)]="datos.constitucion.rutP" />
+          <label>Calidad de Ocupación del Domicilio: </label>
+          <input list="opciones5" [(ngModel)]="datos.constitucion.calidadOcupacion" />
+          <datalist id="opciones5">
+            <option value="Propietario">Propietario</option>
+            <option value="Arrendado Notarial">Arrendado Notarial</option>
+            <option value="Usufructuado">Usufructuado</option>
+            <option value="Cedido">Cedido</option>
+            <option value="Arrendado Simple">Arrendado Simple</option>
+          </datalist>
+          <br>
+          <br>
+          <label>Monto Arriendo M$:</label>
+          <input
+            class="input-field"
+            [(ngModel)]="datos.constitucion.monto"
+          />
+          <label>Tipo Domicilio: </label>
+          <input list="opciones6" [(ngModel)]="datos.constitucion.tipoDomicilio" />
+          <datalist id="opciones6">
+            <option value="Domicilio Postal">Domicilio Postal</option>
+            <option value="Domicilio Urbano">Domicilio Urbano</option>
+          </datalist>
+          <br>
+          <br>
+          <div *ngIf="datos.constitucion.tipoDomicilio=='Domicilio Postal'">
+            <hr>
+            <label>Casilla:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.casilla" />
+            <label>Correo:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.correo" />
+            <label>Región:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.region" />
+            <label>Comuna:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.comunaP" />
+          </div>
+          <div *ngIf="datos.constitucion.tipoDomicilio=='Domicilio Urbano'">
+            <hr>
+            <label>Calle:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.calle" />
+            <label>Número:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.numero" />
+            <label>Oficina/Departamento/Local:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.oficina" />
+            <label>Block:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.block" />
+            <label>Población/Villa:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.poblacion" />
+            <label>Ciudad:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.ciudad" />
+            <label>Rol:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.rol" />
+            <label>Comuna:</label>
+            <input class="input-field" [(ngModel)]="datos.constitucion.comunaU" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Capital Social -->
+    <div *ngIf="pestanaActiva === 'capital'">
+      <label>Enterado $M:</label>
+      <input
+        type="number"
+        class="input-field"
+        [(ngModel)]="datos.capital.enterado"
+      />
+      <label>Por Enterar $M:</label>
+      <input
+        type="number"
+        class="input-field"
+        [(ngModel)]="datos.capital.porEnterar"
+      />
+      <label>Fecha Enterar:</label>
+      <input
+        type="date"
+        class="input-field"
+        [(ngModel)]="datos.capital.fechaE"
+      />
+      <label>Total Capital $M:</label>
+      <input
+        type="number"
+        class="input-field"
+        [(ngModel)]="datos.capital.totalCapital"
+      />
+    </div>
+
+    <!-- Domicilio -->
+    <div *ngIf="pestanaActiva === 'domicilio'">
+      <label>Calle:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.calle" />
+      <label>Número:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.numero" />
+      <label>Oficina/Departamento/Local:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.oficina" />
+      <label>Block:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.block" />
+      <label>Población/Villa:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.poblacion" />
+      <label>Comuna:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.comuna" />
+      <label>Ciudad:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.ciudad" />
+      <label>Teléfono Fijo:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.telefonoFijo" />
+      <label>Teléfono Móvil:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.telefonoMovil" />
+      <label>Email:</label>
+      <input class="input-field" [(ngModel)]="datos.domicilio.email" />
+    </div>
+
+    <button class="submit-btn" (click)="enviar()">Enviar</button>
+  </div>
+</div>

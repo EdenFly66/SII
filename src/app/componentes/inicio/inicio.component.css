@@ -1,0 +1,181 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #005bac;
+  font-weight: bold;
+}
+
+.main {
+  padding: 40px;
+}
+
+.top-section .banner-grid {
+  display: flex;
+  gap: 20px;
+}
+
+.banner-left img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+}
+
+.banner-right h2 {
+  color: #005bac;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.banner-right p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: #f26c3d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn.orange {
+  background-color: #f26c3d;
+}
+
+.btn.dark {
+  background-color: #003a5d;
+}
+
+.info-grid {
+  display: flex;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.quick-access {
+  background-color: #003a5d;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.quick-access h3 {
+  margin-top: 0;
+}
+
+.quick-access ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.support-images {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+}
+
+.support-images img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.highlights-news {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.highlights {
+  flex: 2;
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.highlight-item img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.highlight-item p {
+  margin: 5px 0 0;
+  font-weight: 500;
+}
+
+.news {
+  flex: 1.5;
+}
+
+.news h3 {
+  margin: 0;
+}
+
+.news a {
+  color: #005bac;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.news-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.news-date {
+  font-size: 13px;
+  color: #666;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.news-content {
+  display: flex;
+  gap: 10px;
+}
+
+.news-content img {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.news-content p {
+  margin: 0;
+  font-size: 14px;
+}

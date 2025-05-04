@@ -1,0 +1,59 @@
+.form-container{
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  width: 150vh;
+}
+
+.tab-header {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: #e0f7fa;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  margin-right: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.tab:hover {
+  background-color: #b2ebf2;
+}
+
+.tab.active {
+  background-color: white;
+  border-bottom: 2px solid white;
+}
+
+.tab-content {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0 20px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #004579;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,50 @@
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  width: 150vh;
+}
+.contenido {
+  margin-left: 200px;
+  padding: 100px 30px 30px 30px;
+  width: 100%;
+}
+
+.buscador {
+  display: flex;
+  margin: 20px 0;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #f06d00;
+  border-right: none;
+}
+
+.buscador button {
+  padding: 10px;
+  background: #f06d00;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.tramites {
+  list-style: none;
+  padding: 0;
+}
+
+.tramites li {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.tramites li::after {
+  content: "➔";
+  color: #f06d00;
+}

