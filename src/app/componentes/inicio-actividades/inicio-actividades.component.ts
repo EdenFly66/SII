@@ -86,7 +86,6 @@ export class InicioActividadesComponent {
 
   obtenerFecha() {
     const fecha = new Date();
-
     this.datos.general.dia = fecha.getDate().toString();
     this.datos.general.mes = (fecha.getMonth() + 1).toString();
     this.datos.general.anno = fecha.getFullYear().toString();
@@ -163,6 +162,7 @@ export class InicioActividadesComponent {
       this.editarB(page);
       this.editarC(page);
       this.editarD(page);
+      this.editarE(page);
 
       const pdfEditado = await pdfDoc.save();
       const blob = new Blob([pdfEditado], { type: 'application/pdf' });
@@ -327,7 +327,7 @@ export class InicioActividadesComponent {
         size: 10,
         color: rgb(0, 0, 0),
       });
-      if(this.datos.constitucion.iva != ''){
+      if (this.datos.constitucion.iva != '') {
         page.drawText('X', {
           x: 252,
           y: 608,
@@ -335,7 +335,7 @@ export class InicioActividadesComponent {
           color: rgb(0, 0, 0),
         });
       }
-      if(this.datos.constitucion.exento != ''){
+      if (this.datos.constitucion.exento != '') {
         page.drawText('X', {
           x: 252,
           y: 595,
@@ -343,7 +343,7 @@ export class InicioActividadesComponent {
           color: rgb(0, 0, 0),
         });
       }
-    }else if(this.datos.constitucion.categoria == 'Segunda Categoría'){
+    } else if (this.datos.constitucion.categoria == 'Segunda Categoría') {
       page.drawText('X', {
         x: 160,
         y: 578,
@@ -351,6 +351,102 @@ export class InicioActividadesComponent {
         color: rgb(0, 0, 0),
       });
     }
+    page.drawText(this.datos.constitucion.descripcion, {
+      x: 105,
+      y: 561,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+
+    page.drawText(this.datos.constitucion.codigoP, {
+      x: 137,
+      y: 541,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+
+    page.drawText(this.datos.constitucion.codigoS1, {
+      x: 254,
+      y: 541,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.constitucion.codigoS2, {
+      x: 371,
+      y: 541,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.constitucion.codigoS3, {
+      x: 488,
+      y: 541,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+  }
+
+  editarE(page: PDFPage) {
+    page.drawText(this.datos.domicilio.calle, {
+      x: 35,
+      y: 480,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+
+    page.drawText(this.datos.domicilio.numero, {
+      x: 228,
+      y: 480,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.oficina, {
+      x: 290,
+      y: 480,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.block, {
+      x: 340,
+      y: 480,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.poblacion, {
+      x: 380,
+      y: 480,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.comuna, {
+      x: 35,
+      y: 454,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.ciudad, {
+      x: 185,
+      y: 454,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.telefonoFijo, {
+      x: 325,
+      y: 454,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.telefonoMovil, {
+      x: 460,
+      y: 454,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
+    page.drawText(this.datos.domicilio.email, {
+      x: 185,
+      y: 440,
+      size: 10,
+      color: rgb(0, 0, 0),
+    });
   }
 
   formatearConPuntos(numeroStr: string): string {
